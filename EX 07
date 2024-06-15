@@ -1,0 +1,68 @@
+NAME SUGANYA>S
+REG NO . 230701351
+7.EXPERIMENTS BASED ON TUPLES,SET AND ITS OPERATIONS
+1.
+s = list(input().split())
+l = set()
+for i in s:
+    if i in l:
+        print(i)  
+    else:
+        l.add(i)
+2.
+s1={'q','w','e','r','t','y','u','i','o','p','Q','W','E','R','T','Y','U','I','O','P'}
+s2={'a','s','d','f','g','h','j','k','l','A','S','D','F','G','H','J','K','L'}
+s3={'z','x','c','v','b','n','m','Z','X','C','V','B','N','M'}
+n=int(input())
+lst=[]
+t=[]
+for i in range(n):
+    lst.append(input())
+for i in lst:
+    s=set(i)
+    if s.issubset(s1) or s.issubset(s2) or s.issubset(s3):
+        t.append(i)
+if t==[]:
+    print("No words")
+else:
+    for i in t:
+        print(i)
+3.
+t=eval(input())
+k=int(input())
+lst=[]
+for i in t:
+    for j in t:
+        if i+j==k and (i,j) not in lst and (j,i) not in lst:
+            lst.append((i,j))
+print(len(lst))
+4.
+n=input().split()
+n1,n2=int(n[0]),int(n[1])
+s1=set()
+s2=set()
+x1= [int(x) for x in input().split()]
+for i in x1:
+    s1.add(i)
+x = [int(x) for x in input().split()]
+for i in x:
+    s2.add(i)
+s3=(s1|s2)-(s1&s2)
+s3=list(s3)
+s3.sort()
+for i in s3:
+    print(i,end=" ")
+print("\n{}".format(len(s3)))
+5.
+s=input()
+i=0
+j=10
+l=[]
+for x in range(len(s)-9):
+    sub=s[i:j]
+    if s.find(sub,i+1,len(s))!=-1:
+        if sub not in l:
+            print(sub)
+        l.append(sub)
+    i+=1
+    j+=1
