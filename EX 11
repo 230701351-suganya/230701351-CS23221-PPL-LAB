@@ -1,0 +1,55 @@
+NAME SUGANYA.S
+REG NO. 230701351
+11.EXCEPTIONS
+1.
+try:
+    m=float(input())
+    n=float(input())
+    print(m/n)
+except ZeroDivisionError:
+    print("Error: Cannot divide or modulo by zero.")
+except ValueError:
+    print("Error: Non-numeric input provided.")
+2.
+try:
+    n=int(input())
+    if(n>=0):
+        print("You are",n,"years old.")
+    else:
+        print("Error: Please enter a valid age.")
+except:
+    print("Error: Please enter a valid age.")
+3.
+try:
+    n=float(input())
+    m=float(input())
+    if(m>0):
+        print("Division result:",n/m)
+        print("Modulo result:",int(n%m))
+    else:
+        print("Error: Cannot divide or modulo by zero.")
+    
+except:
+    print("Error: Non-numeric input provided.")
+4.
+try:
+    n=int(input())
+    if n>0:
+        print("You are",n,"years old.")
+    else:
+        print("Error: Please enter a valid age.")
+except:
+    print("Error: Please enter a valid age.")
+5.
+import math
+def sqrt(a):
+    if(a>-1):
+        print("The square root of",a,'is',"%0.2f"%math.sqrt(a),sep=' ')
+try:
+    a=float(input())
+    sqrt(a)
+except ValueError:
+    print("Error: could not convert string to float")
+else:
+    if(a<0):
+        print("Error: Cannot calculate the square root of a negative number. ")
