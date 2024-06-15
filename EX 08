@@ -1,0 +1,91 @@
+NAME SUGANYA.S
+REG NO.230701351
+8.EXPERIMENTS BASED ON DICTIONARY AND ITS OPERATIONS
+1.
+n=int(input())
+d=dict()
+for i in range(n):
+    l=[]
+    s=input().split(" ")
+    str=s[0]
+    for x in range(1,4):
+        l.append(int(s[x]))
+    d.update({str:l})
+avg={key:sum(d[key])/3 for key in d}
+avg={key: val for key, val in sorted(avg.items(), key = lambda ele: ele[1])}
+a=list(d.items())
+b=list(avg.keys())
+min1=[("",100)]
+max1=[("",0)]
+for i in d:
+    if d[i][1]>max1[0][1]:
+        max1=[(i,d[i][1])]
+    elif d[i][1]==max1[0][1]:
+        max1.append((i,d[i][1]))
+for i in d:
+    if d[i][2]<min1[0][1]:
+        min1=[(i,d[i][2])]
+    elif d[i][2]==min1[0][1]:
+        min1.append((i,d[i][2]))
+max1.sort()
+min1.sort()
+print(b[n-1])
+for i in max1:
+    print(i[0],end=" ")
+print()
+for i in min1:
+    print(i[0],end=" ")
+print()
+print(b[0])
+2.
+s=input().split()
+d=input().split()
+l={}
+x=s+d
+for i in x:
+    l.update({i:x.count(i)})
+for i in l:
+    if l[i]==1:
+        print(i,end=" ")
+3.
+d={1:['A','E', 'I', 'L', 'N', 'O', 'R', 'S', 'T', 'U'], 2:['D','G'],3:['B','C','M','P'],
+4:['F', 'H', 'V', 'W' ,'Y'],5:['K'],8:['J','X'],10:['Q','Z']}
+sum=0
+s=input()
+for i in s:
+    for x in d:
+        if i in d[x]:
+            sum+=int(x)
+print(s,"is worth",sum,"points.")
+4.
+n=int(input())
+d={}
+for i in range(n):
+    s=input()
+    if s not in d:
+        d[s]=1
+    else:
+        d[s]+=1
+h=0
+for i in d:
+    if h<d[i]:
+        h=d[i]
+        j=i
+print(j)
+5.
+n=int(input())
+d1=input().split(" ")
+d2=input().split(" ")
+d=dict()
+sum1=0
+sum2=0
+for i in range(1,len(d1)):
+    sum1+=int(d1[i])
+for i in range(1,len(d2)):
+    sum2+=int(d2[i])
+if sum1>sum2:
+    d.update({d2[0]:sum2,d1[0]:sum1})
+else:
+    d.update({d1[0]:sum1,d2[0]:sum2})
+for i  in d:
+    print(i,d[i])
