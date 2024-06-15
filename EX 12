@@ -1,0 +1,53 @@
+NAME SUGANYA.S
+REG NO:230701351
+12.MODULES
+1.
+import math
+ip=[int(e) for e in input().split()]
+d=ip[0]
+s=ip[1]
+area=(math.pi*((d/2)**2))
+n=(area*10000)/(s*s)
+if(n==5):
+    print(int(n)+101,"tiles")
+else:
+    print(int(n)+1,"tiles")
+2.
+n=int(input())
+lst=[int(e) for e in input().split()]
+k=int(input())
+count=0
+for i in range(len(lst)):
+    for j in range(len(lst)):
+        if abs(lst[i]-lst[j])==k and i<j:
+            count+=1
+print(count)
+3.
+n=int(input())
+if (n==0):
+    print("False")
+else:
+    if (n%3==0):
+        print("True")
+    else:
+        print("False")
+4.
+tot=int(input())
+l=[int(e) for e in input().split()]
+n=int(input())
+a=0
+for i in range(n):
+    m=list(map(int,input().split(" ")))
+    if(m[0] in l):
+        a+=m[1]
+        l.remove(m[0])
+print(a)
+5.
+n = int(input())
+index = input().split().index('MARKS')
+avg = 0
+for _ in range(n):
+    inp = int(input().split()[index])
+    avg += inp/n
+    
+print(f'{avg:.2f}')
