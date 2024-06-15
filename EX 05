@@ -1,0 +1,275 @@
+NAME SUGANYA.S
+REG NO:230701351
+
+5.EXPERIMENTS BASED ON STRINGS AND ITS OPERATION 
+
+1.Write a program that takes as input a string (sentence), and returns its second word in uppercase.
+
+For example:
+
+If input is “Wipro Technologies Bangalore” the function should return “TECHNOLOGIES”
+
+If input is “Hello World” the function should return “WORLD”
+
+If input is “Hello” the program should return “LESS”
+
+NOTE 1: If input is a sentence with less than 2 words, the program should return the word “LESS”.
+
+NOTE 2: The result should have no leading or trailing spaces.
+CODING:
+str=input()
+word=str.split()
+if len(word)>=2:
+    print(word[1].upper())
+else:
+    print("LESS")
+2.Write a python to read a sentence and print its longest word and its length
+Input	
+This is a sample text to test
+Output
+sample
+6
+CODING:
+sen=input()
+word=sen.split()
+long=max(word,key=len)
+print(long,len(long),sep='\n')
+
+3.Write a python program to count all letters, digits, and special symbols respectively from a given string
+Input
+rec@123
+Output
+3
+3
+1
+CODING:
+str=input()
+l=0
+d=0
+s=0
+for i in str:
+    if i.isalpha():
+        l+=1
+    elif i.isdigit():
+        d+=1
+    else:
+        s+=1
+print(l,d,s,sep="\n")
+4.Assume that the given string has enough memory.
+Don't use any extra space(IN-PLACE)
+Sample Input 1
+a2b4c6
+Sample Output 1
+aabbbbcccccc
+CODING:
+s=input()
+i=0
+w=""
+while i<len(s):
+    if (s[i].isalpha()):
+        c=s[i]
+        i+=1
+    else:
+        while(i<len(s) and s[i].isdigit()):
+            w=w+s[i]
+            i+=1
+        print(c*int(w),end="")
+        w=""
+5.In this exercise, you will create a program that reads words from the user until the user enters a blank line. After the user enters a blank line your program should display each word entered by the user exactly once. The words should be displayed in the same order that they were first entered. For example, if the user enters:
+first
+second
+first
+third
+second
+then your program should display:
+first
+second
+third
+CODING:
+lst=[]
+while True:
+    s=input()
+    if s==" ":
+        break
+    else:
+        if s not in lst:
+            lst.append(s)
+for i in lst:
+    print(i)
+6.Given a string S, which contains several words, print the count C of the words whose length is atleast L. (You can include punctuation marks like comma, full stop also as part of the word length. Space alone must be ignored)
+
+Input Format:
+
+The first line contains S.
+The second line contains L.
+
+ 
+
+Output Format:
+
+The first line contains C
+
+Boundary Conditions:
+
+2 <= Length of S <= 1000
+
+Example Input/Output 1:
+
+Input:
+
+During and after Kenyattas inauguration police elsewhere in the capital, Nairobi, tried to stop the opposition from holding peaceful demonstrations.
+5
+
+Output:
+
+13
+
+Explanation:
+
+The words of minimum length 5 are
+During
+after
+Kenyattas
+inauguration
+police
+elsewhere
+capital,
+Nairobi,
+tried
+opposition
+holding
+peaceful
+demonstrations.
+
+CODING:
+s=input()
+c=int(input())
+co=0
+a=s.split(" ")
+for i in a:
+    if len(i)>=c:
+        co+=1
+print(co)
+7.Two string values S1, S2 are passed as the input. The program must print first N characters present in S1 which are also present in S2.
+
+Input Format:
+
+The first line contains S1.
+The second line contains S2.
+The third line contains N.
+
+Output Format:
+The first line contains the N characters present in S1 which are also present in S2.
+Boundary Conditions:
+2 <= N <= 10
+2 <= Length of S1, S2 <= 1000
+Example Input/Output 1:
+
+Input:
+
+abcbde
+cdefghbb
+3
+Output:
+bcd
+Note:
+b occurs twice in common but must be printed only once.
+CODING:
+s1=input()
+s2=input()
+n=int(input())
+c=0
+l=[]
+i=0
+while(c<n):
+    if s1[i] in s2 and s1[i] not in l:
+        l.append(s1[i])
+        c+=1
+    i+=1
+for i in l:
+    print(i,end="")
+8.Given a string S which is of the format USERNAME@DOMAIN.EXTENSION, the program must print the EXTENSION, DOMAIN, USERNAME in the reverse order.
+
+Input Format:
+
+The first line contains S.
+
+Output Format:
+
+The first line contains EXTENSION.
+The second line contains DOMAIN.
+The third line contains USERNAME.
+
+Boundary Condition:
+
+1 <= Length of S <= 100
+
+Example Input/Output 1:
+
+Input:
+
+abcd@gmail.com
+
+Output:
+
+com
+gmail
+abcd
+CODING:
+s=input()
+a=s.split("@")
+l=a[1].split(".")
+for i in range(1,len(l)):
+    if(len(l)==2 or i+1==len(l)):
+        print(l[i])
+    else:
+        print(l[i],end=".")
+print(l[0])
+print(a[0])
+9.Find if a String2 is substring of String1. If it is, return the index of the first occurrence. else return -1.
+Sample Input 1 
+thistest123string
+123
+Sample Output 1 
+8
+CODING:
+s=input()
+sub=input()
+index=s.find(sub)
+print(index)
+
+10.Consider the below words as key words and check the given input is key word or not.
+
+keywords: {break, case, continue, default, defer, else, for, func, goto, if, map, range, return, struct, type, var}
+
+Input format:
+
+Take string as an input from stdin.
+
+Output format:
+
+Print the word is key word or not.
+
+Example Input:
+
+break
+
+Output:
+
+break is a keyword
+
+Example Input:
+
+IF
+
+Output:
+
+IF is not a keyword
+
+CODING:
+keyword=["break","case","continue","default","defer","else","for","func","goto","if","map","range","return","struct","type","var"]
+s=input()
+if s in keyword :
+    print(s,"is a keyword")
+else:
+    print(s,"is not a keyword")
